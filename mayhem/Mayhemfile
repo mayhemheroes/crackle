@@ -1,0 +1,11 @@
+project: crackle
+target: crackle
+
+# In-process libFuzzer harness over crackle's PCAP/BTLE parser (mayhem/fuzz_crackle.c).
+cmds:
+  - cmd: /mayhem/crackle_fuzz
+    libfuzzer: true
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/crackle/testsuite
